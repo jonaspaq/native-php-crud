@@ -16,4 +16,5 @@ function myConnect(){
         echo "No connection!";
     }
 }
+// <!-- EVERYTHING MADE BY JONAS PAQUIBOT -->
 ?>

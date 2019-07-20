@@ -1,4 +1,3 @@
-<!-- EVERYTHING MADE BY JONAS PAQUIBOT -->
 <?php
 require('myConnect.php');
 
@@ -25,7 +24,7 @@ function addUser(){
     if($result){
         header('Location:../views/welcome.php?succIn=Success');
     }else{
-        header('Location:../views/welcome.php?failIn=Fail');
+        header('Location:../views/welcome.php?succIn=Fail');
     }
 }
 
@@ -39,7 +38,7 @@ function deleteData(){
     if($result){
         header('Location:../../views/welcome.php?succDel=Success');
     }else{
-        header('Location:../../views/welcome.php?failDel=Fail');
+        header('Location:../../views/welcome.php?succDel=Fail');
     }
 }
 
@@ -55,7 +54,7 @@ function updateData(){
     if($result){
         header('Location:../views/welcome.php?succUpd=Success');
     }else{
-        header('Location:../views/welcome.php?failUpd=Fail');
+        header('Location:../views/welcome.php?succUpd=Fail');
     }
     
 }
@@ -69,8 +68,8 @@ function loadUsers(){
     if($result){
         return $result;
     }else{
-        echo "Failed or no Data";
+        //echo "Failed or no Data";
     }
 }
-
+// <!-- EVERYTHING MADE BY JONAS PAQUIBOT -->
 ?>

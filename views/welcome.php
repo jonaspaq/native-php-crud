@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <!-- EVERYTHING MADE BY JONAS PAQUIBOT -->
 <html lang="en">
@@ -11,17 +12,21 @@
 </head>
 <body style="display:flex;align-items:center">
     <div style="display:block;margin:auto;align:center;">
+    <h2> No UI/Front-end Design, Pure native php CRUD</h2>
     <?php
 
     // MESSAGE OR ALERT
     if(isset($_GET['succIn'])){
-        $geturl = $_GET['succIn'];
-        if($geturl == "Success"){ 
-            echo '<h1>Successfully added!</h1>';
-        }else{
+        $addData = $_GET['succIn'];
+        if($addData == "Success"){ 
+            echo '<h1>Successfully added Data!</h1>';
+        }else if($addData == "Fail"){
             echo '<h1>Fail adding data!</h1>';  
         }
-    } ?>
+    } 
+    
+    
+    ?>
 
     <!-- ADD FORM -->
     <form action="../controllers/UserController.php" method="POST">
@@ -42,7 +47,23 @@
     <?php 
     include_once('../controllers/UserController.php');
     $users = loadUsers();
-
+    
+    if(isset($_GET['succDel'])){
+        $addData = $_GET['succDel'];
+        if($addData == "Success"){ 
+            echo '<h1>Successfully Deleted Data!</h1>';
+        }else if($addData == "Fail"){
+            echo '<h1>Fail deleting data!</h1>';  
+        }
+    } 
+    if(isset($_GET['succUpd'])){
+        $addData = $_GET['succUpd'];
+        if($addData == "Success"){ 
+            echo '<h1>Successfully Updated Data!</h1>';
+        }else if($addData == "Fail"){
+            echo '<h1>Fail Updating data!</h1>';  
+        }
+    } 
     foreach($users as $row){
         $id = "'".$row['id']."'"; $name = "'".$row['name']."'"; $hobby = "'".$row['hobby']."'";
         echo "<tr>";
